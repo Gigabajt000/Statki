@@ -17,17 +17,21 @@ def PokazPlanszy(plansza):
         if i%9 == 0:
             print()
 
-Lista = ["O O","O O","O O O","O O O","O O O O","O O O O O"]
-liczba_statkow = 6
+Lista = ["OO","OO","OOO","OOO","OOOO","OOOOO"]
+liczba_statkow = 5
 
 def Ustawianie(liczba_statkow):
     for i in range(0,liczba_statkow + 1):
         print(Lista[i])
     rząd = int(input("podaj rząd (od 1 do 9)"))
     kolumna = int(input("podaj kolumnę (od 1 do 9)"))
-    plansza[rząd * 9 + kolumna - 1] = "O"
+    plansza[(rząd - 1) * 9 + kolumna - 1] = "O"
+    kierunek = input("kierunek N E S W: ")
+    
+    
     
 
-Ustawianie(liczba_statkow)
+
 while running:
     PokazPlanszy(plansza)
+    Ustawianie(liczba_statkow)
