@@ -12,20 +12,25 @@ plansza = ["-","-","-","-","-","-","-","-","-",
            "-","-","-","-","-","-","-","-","-",]
 
 def PokazPlanszy(plansza):
+    print(end="|")
     for i in range(1,82):
         print(plansza[i - 1 ],end="|")
-        if i%9 == 0:
+        if i%9 == 0 :
             print()
+            if i != 81:
+                print(end="|")
 
 Lista = ["OO","OO","OOO","OOO","OOOO","OOOOO"]
-liczba_statkow = 5
 
-def Ustawianie(liczba_statkow):
-    for i in range(0,liczba_statkow + 1):
+
+def Ustawianie(Lista):
+    print("Twoje Statki: ")
+    for i in range(0,len(Lista) ):
         print(Lista[i])
     rząd = int(input("podaj rząd (od 1 do 9)"))
     kolumna = int(input("podaj kolumnę (od 1 do 9)"))
     plansza[(rząd - 1) * 9 + kolumna - 1] = "O"
+    Lista.pop(0)
     kierunek = input("kierunek N E S W: ")
     
     
@@ -34,4 +39,4 @@ def Ustawianie(liczba_statkow):
 
 while running:
     PokazPlanszy(plansza)
-    Ustawianie(liczba_statkow)
+    Ustawianie(Lista)
